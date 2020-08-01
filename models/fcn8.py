@@ -9,7 +9,7 @@ import numpy as np
 class FCN8(torch.nn.Module):
 
   # init function
-  def __init__(self, pretrained_net, num_classes=num_classes):
+  def __init__(self, pretrained_net, num_classes=21):
     super(FCN8, self).__init__()
 
     # encoder 1, encoder 2 and encoder 3
