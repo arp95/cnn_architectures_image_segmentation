@@ -31,17 +31,17 @@ The results after using different CNN architectures are given below:
 
 1. <b>FCN-32</b><br>
 
-Training mIoU = 46.2% and Validation mIoU = 17.4% (epochs = 75, bs = 8, lr = 1e-5, wd = 1e-5)
+Training mIoU = 46.2% and Validation mIoU = 17.4% (epochs = 100, bs = 8, lr = 1e-5, wd = 1e-5)
 
 
 2. <b>FCN-16</b><br>
 
-Training mIoU = 50.8% and Validation mIoU = 26.6% (epochs = 12, lr = 5e-5, bs = 12, wd = 1e-4)
+Training mIoU = 50.8% and Validation mIoU = 26.6% (epochs = 100, lr = 1e-5, bs = 12, wd = 1e-4)
 
 
 3. <b>FCN-8</b><br>
 
-Training mIoU = 50.8% and Validation mIoU = 18.2% (epochs = 150, lr = 0.001, bs = 12, wd = 5e-4)
+Training mIoU = 60.2% and Validation mIoU = 28.1% (epochs = 100, lr = 1e-5, bs = 12, wd = 1e-4)
 
 
 ### Software Required
