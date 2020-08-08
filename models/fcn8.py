@@ -9,7 +9,7 @@ import numpy as np
 class FCN8(torch.nn.Module):
 
   # init function
-  def __init__(self, pretrained_net, num_classes=21):
+  def __init__(self, pretrained_net, num_classes=num_classes):
     super(FCN8, self).__init__()
 
     # encoder 1, encoder 2 and encoder 3
@@ -17,9 +17,18 @@ class FCN8(torch.nn.Module):
     self.encoder_2 = torch.nn.Sequential(*list(pretrained_net.features.children())[-20:-10])
     self.encoder_3 = torch.nn.Sequential(*list(pretrained_net.features.children())[-10:])
 
+    self.encoder_classifier = torch.nn.Sequential(
+        torch.nn.Conv2d(512, 4096, kernel_size=7, padding=3),
+        torch.nn.ReLU(inplace=True),
+        torch.nn.Dropout(),
+        torch.nn.Conv2d(4096, 4096, kernel_size=1),
+        torch.nn.ReLU(inplace=True),
+        torch.nn.Dropout()
+    )
+
     # decoder 1, decoder 2 and decoder 3
     self.decoder_1 = torch.nn.Sequential(
-        torch.nn.ConvTranspose2d(512, 512, kernel_size=3, stride=2, padding=1, output_padding=1),
+        torch.nn.ConvTranspose2d(4096, 512, kernel_size=3, stride=2, padding=1, output_padding=1),
         torch.nn.ReLU(inplace=True)
     )
 
@@ -49,6 +58,7 @@ class FCN8(torch.nn.Module):
     enc_output_1 = self.encoder_1(x)
     enc_output_2 = self.encoder_2(enc_output_1)
     output = self.encoder_3(enc_output_2)
+    output = self.encoder_classifier(output)
 
     # apply decoder
     dec_output_1 = self.decoder_1(output)
