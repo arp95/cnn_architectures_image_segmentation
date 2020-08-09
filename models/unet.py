@@ -108,5 +108,5 @@ class UNet(torch.nn.Module):
     final = self.final_block(dec_4)
 
     # upsample to image size
-    output = torch.nn.functional.upsample_bilinear(final, [512, 1024])
+    output = torch.nn.functional.upsample_bilinear(final, [224, 224])
     return output
