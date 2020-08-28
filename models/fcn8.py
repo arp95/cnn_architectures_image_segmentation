@@ -9,7 +9,7 @@ import numpy as np
 class FCN8(torch.nn.Module):
 
   # init function
-  def __init__(self, pretrained_net, num_classes=num_classes):
+  def __init__(self, pretrained_net, num_classes=21):
     super(FCN8, self).__init__()
 
     # encoder 1, encoder 2 and encoder 3
@@ -29,26 +29,26 @@ class FCN8(torch.nn.Module):
     # decoder 1, decoder 2 and decoder 3
     self.decoder_1 = torch.nn.Sequential(
         torch.nn.ConvTranspose2d(4096, 512, kernel_size=3, stride=2, padding=1, output_padding=1),
+        torch.nn.BatchNorm2d(512),
         torch.nn.ReLU(inplace=True)
     )
 
     self.decoder_2 = torch.nn.Sequential(
-        torch.nn.BatchNorm2d(512),
         torch.nn.ConvTranspose2d(512, 256, kernel_size=3, stride=2, padding=1, output_padding=1),
+        torch.nn.BatchNorm2d(256),
         torch.nn.ReLU(inplace=True)
     )
 
     self.decoder_3 = torch.nn.Sequential(
-        torch.nn.BatchNorm2d(256),
         torch.nn.ConvTranspose2d(256, 128, kernel_size=3, stride=2, padding=1, output_padding=1),
-        torch.nn.ReLU(inplace=True),
         torch.nn.BatchNorm2d(128),
+        torch.nn.ReLU(inplace=True),
         torch.nn.ConvTranspose2d(128, 64, kernel_size=3, stride=2, padding=1, output_padding=1),
-        torch.nn.ReLU(inplace=True),
         torch.nn.BatchNorm2d(64),
-        torch.nn.ConvTranspose2d(64, 32, kernel_size=3, stride=2, padding=1, output_padding=1),
         torch.nn.ReLU(inplace=True),
+        torch.nn.ConvTranspose2d(64, 32, kernel_size=3, stride=2, padding=1, output_padding=1),
         torch.nn.BatchNorm2d(32),
+        torch.nn.ReLU(inplace=True),
         torch.nn.Conv2d(32, num_classes, kernel_size=1)
     )
 
