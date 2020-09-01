@@ -24,6 +24,8 @@ transforms = torchvision.transforms.Compose([torchvision.transforms.Resize((256,
 # define model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = torchvision.models.segmentation.fcn_resnet101(pretrained=True)
+model.classifier = torchvision.models.segmentation.fcn.FCNHead(2048, num_classes)
+model.load_state_dict(torch.load(model_path, map_location=device))
 model.to(device)
 
 # eval model
