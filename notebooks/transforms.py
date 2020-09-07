@@ -34,11 +34,8 @@ class ToTensor(object):
 
 
 class Normalize(object):
-
+  
   # call method
-  def __call__(object):
-
-    # call method
-    def __call__(self, sample):
-      image, mask = sample["image"], sample["mask"]
-      return {"image": image.type(torch.FloatTensor) / 255., "mask": mask.type(torch.FloatTensor) / 255.}
+  def __call__(self, sample):
+    image, mask = sample["image"], sample["mask"]
+    return {"image": image.type(torch.FloatTensor) / 255., "mask": mask.type(torch.FloatTensor) / 255.}

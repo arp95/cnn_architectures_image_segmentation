@@ -47,7 +47,7 @@ class SegDataset(torch.utils.data.Dataset):
     imageName = self.imageNames[index]
     maskName = self.maskNames[index]
     image = cv2.imread(imageName, self.imageColorFlag).transpose(2, 0, 1)
-    mask = cv2.imread(maskName)
+    mask = cv2.imread(maskName, self.maskColorFlag)
 
     sample = {"image": image, "mask": mask}
     if self.transform:
