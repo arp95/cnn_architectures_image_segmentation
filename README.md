@@ -9,11 +9,11 @@ Arpit Aggarwal
 
 
 ### Introduction to the Project
-In this project, different CNN Architectures like FCN-8, FCN-16, FCN-32, UNet, SegNet were used for the task of image segmentation on the Pascal VOC 2012 dataset. The input to the CNN networks was a (512 x 512 x 3) image and the number of classes were 21. The CNN architectures were implemented in PyTorch and the loss function was Cross Entropy Loss(2d). The hyperparameters to be tuned were: Number of epochs(e), Learning Rate(lr), momentum(m), weight decay(wd) and batch size(bs). 
+In this project, different CNN Architectures like FCN-8, FCN-16, FCN-32, Pretrained-FCN, Pretrained-DeepLabv3 were used for the task of image segmentation on a custom dataset (CrackForest). The input to the CNN networks was a (320 x 480 x 3) image and the number of classes were 1 (Crack or not). The CNN architectures were implemented in PyTorch and the loss function was Mean Square Error(MSE). The hyperparameters to be tuned were: Number of epochs(e), Learning Rate(lr), momentum(m), weight decay(wd) and batch size(bs). 
 
 
 ### Data
-The dataset used was Pascal VOC 2012. It is available in torchvision and no additional download was needed.
+The custom dataset used was CrackForest. The dataset can be downloaded from here: https://github.com/msminhas93/DeepLabv3FineTuning
 
 
 ### Architectures Used
@@ -22,26 +22,8 @@ Different CNN architectures used for the task of image segmentation are given be
 1. FCN-8: Encoder/Backbone used is VGG-16.
 2. FCN-16: Encoder/Backbone used is VGG-16.
 3. FCN-32: Encoder/Backbone used is VGG-16.
-4. UNet: Encoder/Backbone used is VGG-16.
-5. SegNet: Encoder/Backbone used is VGG-16.
-
-
-### Results
-The results after using different CNN architectures are given below:
-
-1. <b>FCN-32</b><br>
-
-Training mIoU = 46.2% and Validation mIoU = 17.4% (epochs = 100, bs = 8, lr = 1e-5, wd = 1e-5)
-
-
-2. <b>FCN-16</b><br>
-
-Training mIoU = 50.8% and Validation mIoU = 26.6% (epochs = 100, lr = 1e-5, bs = 12, wd = 1e-4)
-
-
-3. <b>FCN-8</b><br>
-
-Training mIoU = 60.2% and Validation mIoU = 28.1% (epochs = 100, lr = 1e-5, bs = 12, wd = 1e-4)
+4. Pretrained-FCN: Encoder/Backbone used is ResNet-101
+5. Pretrained-DeepLabv3: Encoder/Backbone used is ResNet-101
 
 
 ### Software Required
@@ -50,6 +32,7 @@ To run the jupyter notebooks, use Python 3. Standard libraries like Numpy and Py
 
 ### Credits
 The following links were helpful for this project:
-1. https://github.com/pytorch/tutorials
-2. https://github.com/bodokaiser/piwise/
-3. https://github.com/meetshah1995/pytorch-semseg/
+1. https://github.com/msminhas93/DeepLabv3FineTuning
+2. https://github.com/pytorch/tutorials
+3. https://github.com/bodokaiser/piwise/
+4. https://github.com/meetshah1995/pytorch-semseg/
