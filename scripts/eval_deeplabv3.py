@@ -20,8 +20,8 @@ transforms = torchvision.transforms.Compose([torchvision.transforms.ToTensor()])
 
 # define model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = torchvision.models.segmentation.fcn_resnet101(pretrained=True)
-model.classifier = torchvision.models.segmentation.fcn.FCNHead(2048, num_classes)
+model = torchvision.models.segmentation.deeplabv3_resnet101(pretrained=True)
+model.classifier = torchvision.models.segmentation.deeplabv3.DeepLabHead(2048, num_classes)
 model.load_state_dict(torch.load(model_path, map_location=device))
 model.to(device)
 
