@@ -18,7 +18,7 @@ The custom dataset used was ISIC 2018 for melanoma detection. The dataset can be
   <img src="data/1.jpg" width="256" title="Melanoma Image">
 </p> 
 <p align="center">
-  <img src="data/2.jpg" width="256" title="Segmented Mask">
+  <img src="data/2.png" width="256" title="Segmented Mask">
 </p>
 
 
