@@ -32,17 +32,17 @@ The results after using different CNN architectures are given below:
 
 1. <b>U-Net</b><br>
 
-Training Accuracy = 98.01% and Validation Accuracy = 96.63% (e=100, lr=0.001, bs=8)<br>
+Training Accuracy = 96.46% and Validation Accuracy = 94.19% (e=100, lr=0.001, bs=8)<br>
 
 
 2. <b>FCN-8</b><br>
 
-Training Accuracy = 99.27% and Validation Accuracy = 96.73% (e=100, lr=0.001, bs=8)<br>
+Training Accuracy = 95.76% and Validation Accuracy = 93.37% (e=100, lr=0.001, bs=8)<br>
 
 
 3. <b>SegNet</b><br>
 
-Training Accuracy = 99.27% and Validation Accuracy = 96.73% (e=100, lr=0.001, bs=8)<br>
+Training Accuracy = 92.43% and Validation Accuracy = 90.82% (e=100, lr=0.001, bs=8)<br>
 
 
 ### Software Required
