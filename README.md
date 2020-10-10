@@ -14,8 +14,8 @@ In this project, different CNN Architectures like FCN-8, FCN-16, FCN-32, U-Net w
 
 ### Data
 The custom dataset used was ISIC 2018 for melanoma detection. The dataset can be downloaded from here: https://challenge2018.isic-archive.com/task1/training/
-![](data/1.jpg) 
-![](data/2.png) 
+![](data/1.jpg =100x20) 
+![](data/2.png =100x20) 
 
 
 ### Architectures Used
