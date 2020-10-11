@@ -9,7 +9,7 @@ Arpit Aggarwal
 
 
 ### Introduction to the Project
-In this project, different CNN Architectures like FCN-8, FCN-16, FCN-32, U-Net and SegNet were used for the task of medical image segmentation. The input to the CNN networks was a (224x224x3) image and the number of classes were 1. The CNN architectures were implemented in PyTorch and the loss function was Binary Cross Entropy(BCE) Loss. The hyperparameters to be tuned were: Number of epochs(e), Learning Rate(lr), weight decay(wd) and batch size(bs). 
+In this project, different CNN Architectures like FCN-8, FCN-16, FCN-32, U-Net and SegNet were used for the task of medical image segmentation. The input to the CNN networks was a (224x224x3) image and the number of classes were equal to 1. The CNN architectures were implemented in PyTorch and the loss function was Binary Cross Entropy(BCE) Loss. The hyperparameters to be tuned were: Number of epochs(e), Learning Rate(lr) and batch size(bs). 
 
 
 ### Data
